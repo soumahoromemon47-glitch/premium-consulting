@@ -74,7 +74,7 @@ export default function Navbar() {
           onClick={() => setIsOpen((prev) => !prev)}
           className="lg:hidden relative z-10001 bg-marine text-white px-5 py-3 text-sm font-medium rounded-lg cursor-pointer"
         >
-          {isOpen ? "FERMER ✕" : "MENU ☰"}
+          {isOpen ? "✕" : "☰"}
         </button>
       </div>
 
