@@ -23,7 +23,11 @@ export default function ContactPage() {
           <h2 className="text-2xl font-serif text-marine mb-8">
             Envoyez-nous un message
           </h2>
-          <form className="space-y-8">
+          <form
+            action="https://formspree.io/f/xbggawdl"
+            method="POST"
+            className="space-y-8"
+          >
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-8">
               <div>
                 <label
@@ -124,7 +128,7 @@ export default function ContactPage() {
                 rapidement, écrivez-nous directement sur WhatsApp.
               </p>
               <a
-                href="https://wa.me/VOTRE_NUMERO"
+                href="https://wa.me/+2250576693374"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group inline-flex items-center justify-center gap-2 bg-accent text-white px-6 py-3 text-sm font-medium hover:bg-[#b03d27] active:scale-[0.98] transition-all rounded-lg w-full text-center"
@@ -150,14 +154,14 @@ export default function ContactPage() {
                   <span className="text-base">
                     Abidjan, Côte d’Ivoire
                     <br />
-                    Cocody, Riviera (à préciser)
+                    Cocody, Riviera Palmeraie
                   </span>
                 </li>
                 <li>
                   <span className="block text-xs font-medium uppercase tracking-wider text-marine/50 mb-1">
                     Téléphone
                   </span>
-                  <span className="text-base">+225 XX XX XX XX XX</span>
+                  <span className="text-base">+225 05 76 69 33 74</span>
                 </li>
                 <li>
                   <span className="block text-xs font-medium uppercase tracking-wider text-marine/50 mb-1">
