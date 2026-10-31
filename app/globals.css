@@ -1,26 +1,91 @@
-@import "tailwindcss";
+﻿@import "tailwindcss";
 
+/* Force le mode clair pour respecter la charte */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  color-scheme: light;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+@theme {
+  /* Couleurs du cahier des charges */
+  --color-marine: #14213d;
+  --color-fond: #f3efe6;
+  --color-accent: #c8452d;
+  --color-secondaire: #e6ebf2;
+  --color-ligne: #c9d1dc;
+
+  /* Typographies */
+  --font-sans: var(--font-public-sans), sans-serif;
+  --font-serif: var(--font-newsreader), serif;
+
+  /* Coins droits (2 à 4 px max) */
+  --radius-sm: 2px;
+  --radius-md: 4px;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@layer base {
+  html {
+    overflow-x: clip;
+  }
+
+  body {
+    background-color: var(--color-fond);
+    color: var(--color-marine);
+    -webkit-font-smoothing: antialiased;
+
+    /* Ajout d'une texture de bruit (grain) très subtile */
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.03'/%3E%3C/svg%3E");
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-serif);
+    letter-spacing: -0.02em;
+  }
+
+  * {
+    border-color: var(--color-ligne);
+  }
+
+  button {
+    cursor: pointer;
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/* Animations personnalisées */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  opacity: 0; /* Commence invisible */
+}
+
+/* Effet de soulignement fluide pour les liens */
+.link-underline {
+  position: relative;
+}
+.link-underline::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 1px;
+  bottom: -2px;
+  left: 0;
+  background-color: var(--color-accent);
+  transition: width 0.3s ease;
+}
+.link-underline:hover::after {
+  width: 100%;
 }
