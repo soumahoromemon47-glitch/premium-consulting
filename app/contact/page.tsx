@@ -199,7 +199,7 @@ export default function ContactPage() {
                 rapidement, écrivez-nous directement sur WhatsApp.
               </p>
               <a
-                href="https://wa.me/VOTRE_NUMERO"
+                href="https://wa.me/+2250576693374"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group inline-flex items-center justify-center gap-2 bg-accent text-white px-6 py-3 text-sm font-medium hover:bg-[#b03d27] active:scale-[0.98] transition-all rounded-lg w-full text-center"
@@ -226,21 +226,24 @@ export default function ContactPage() {
                   <span className="text-base">
                     Abidjan, Côte d’Ivoire
                     <br />
-                    Cocody, Riviera (à préciser)
+                    Cocody, Riviera palmeraie, quartier Marie Rose Guiraud près
+                    de la pharmacie Marthe Robin
                   </span>
                 </li>
                 <li>
                   <span className="block text-xs font-medium uppercase tracking-wider text-marine/50 mb-1">
                     Téléphone
                   </span>
-                  <span className="text-base">+225 XX XX XX XX XX</span>
+                  <span className="text-base">
+                    +225 07 87 01 41 29 | +225 05 76 69 33 74
+                  </span>
                 </li>
                 <li>
                   <span className="block text-xs font-medium uppercase tracking-wider text-marine/50 mb-1">
                     E-mail
                   </span>
                   <span className="text-base">
-                    contact@premiumconsulting.ci
+                    procetude@agencepremium-ci.com | etude.premiumc@gmail.com
                   </span>
                 </li>
               </ul>

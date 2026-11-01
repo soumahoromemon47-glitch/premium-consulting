@@ -125,7 +125,7 @@ export default function AProposPage() {
             académique enregistré en Côte d’Ivoire.{" "}
             <br className="hidden md:block" /> Raison sociale : [À compléter] —
             Numéro d’immatriculation : [À compléter] — Siège social : Abidjan,
-            Cocody.
+            Riviera palmeraie.
           </p>
         </section>
       </FadeIn>
