@@ -330,11 +330,11 @@ export default function ContactPage() {
               <ul className="space-y-3 text-sm text-marine/80">
                 <li className="flex justify-between border-b border-ligne/50 pb-2">
                   <span>Lundi - Vendredi</span>
-                  <span className="font-medium text-marine">08h00 - 18h00</span>
+                  <span className="font-medium text-marine">08h00 - 17h00</span>
                 </li>
                 <li className="flex justify-between border-b border-ligne/50 pb-2">
                   <span>Samedi</span>
-                  <span className="font-medium text-marine">09h00 - 13h00</span>
+                  <span className="font-medium text-marine">08h00 - 12h00</span>
                 </li>
                 <li className="flex justify-between text-marine/50">
                   <span>Dimanche</span>

@@ -60,6 +60,22 @@ export default function Footer() {
                 Nous contacter
               </Link>
             </li>
+            <li>
+              <Link
+                href="/mentions-legales"
+                className="hover:text-accent transition-colors"
+              >
+                Mentions Légales
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/politique-de-confidentialite"
+                className="hover:text-accent transition-colors"
+              >
+                Politique de Confidentialité
+              </Link>
+            </li>
           </ul>
         </div>
       </div>
