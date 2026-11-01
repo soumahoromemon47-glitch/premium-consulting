@@ -1,9 +1,13 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 
 export default function EvaluationPage() {
   const [step, setStep] = useState(1);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false);
+
   const [formData, setFormData] = useState({
     niveau: "",
     filiere: "",
@@ -14,6 +18,9 @@ export default function EvaluationPage() {
     whatsapp: "",
   });
 
+  // ⚠️ REMPLACE CETTE URL PAR CELLE DE TON FORMSPREE (Évaluation)
+  const FORMSPREE_ENDPOINT = "https://formspree.io/f/xbggawdl";
+
   const nextStep = () => setStep((prev) => Math.min(prev + 1, 5));
   const prevStep = () => setStep((prev) => Math.max(prev - 1, 1));
 
@@ -23,10 +30,67 @@ export default function EvaluationPage() {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  /*const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    alert("Formulaire envoyé ! Merci " + formData.nom);
-  };*/
+    setIsSubmitting(true);
+
+    try {
+      const response = await fetch(FORMSPREE_ENDPOINT, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        setIsSubmitted(true);
+      } else {
+        alert("Une erreur est survenue. Veuillez réessayer.");
+      }
+    } catch {
+      alert("Erreur de connexion. Veuillez vérifier votre réseau.");
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+  // Écran de succès
+  if (isSubmitted) {
+    return (
+      <div className="max-w-2xl mx-auto px-4 py-24 text-center">
+        <div className="w-20 h-20 bg-green-100 text-green-600 rounded-full flex items-center justify-center mx-auto mb-8">
+          <svg
+            className="w-10 h-10"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+              d="M5 13l4 4L19 7"
+            />
+          </svg>
+        </div>
+        <h1 className="text-4xl font-serif text-marine mb-6">
+          Demande envoyée !
+        </h1>
+        <p className="text-lg text-marine/80 mb-8">
+          Merci {formData.nom}. Votre profil a bien été enregistré. Un
+          conseiller vous contactera sous 24h ouvrées.
+        </p>
+        <Link
+          href="/"
+          className="inline-block bg-marine text-fond px-8 py-4 font-medium hover:bg-opacity-90 transition-all rounded-lg"
+        >
+          Retour à l&apos;accueil
+        </Link>
+      </div>
+    );
+  }
 
   return (
     <div className="max-w-2xl mx-auto px-4 py-16">
@@ -36,27 +100,22 @@ export default function EvaluationPage() {
           <span>Étape {step} sur 5</span>
           <span>{Math.round((step / 5) * 100)}%</span>
         </div>
-        <div className="w-full bg-ligne h-2 rounded-lg">
+        <div className="w-full bg-ligne h-2 rounded-sm">
           <div
-            className="bg-accent h-2 rounded-lg transition-all duration-300"
+            className="bg-accent h-2 rounded-sm transition-all duration-300"
             style={{ width: `${(step / 5) * 100}%` }}
           ></div>
         </div>
       </div>
 
-      <form
-        action="https://formspree.io/f/xbggawdl"
-        method="POST"
-        // onSubmit={handleSubmit}
-        className="space-y-8"
-      >
+      <form onSubmit={handleSubmit} className="space-y-8">
         {/* ÉTAPE 1 */}
         {step === 1 && (
           <div className="space-y-6">
             <h1 className="text-3xl font-serif text-marine mb-2">
               Quel est votre niveau actuel ?
             </h1>
-            <p className="text-marine/70 mb-6">
+            <p className="text-marine/80 mb-6">
               Cela nous aidera à déterminer la meilleure procédure pour vous.
             </p>
 
@@ -89,7 +148,7 @@ export default function EvaluationPage() {
             <h1 className="text-3xl font-serif text-marine mb-2">
               Quelle filière visez-vous ?
             </h1>
-            <p className="text-marine/70 mb-6">
+            <p className="text-marine/80 mb-6">
               Sélectionnez le domaine qui vous intéresse.
             </p>
             <select
@@ -143,8 +202,8 @@ export default function EvaluationPage() {
             <h1 className="text-3xl font-serif text-marine mb-2">
               Quel est votre budget indicatif annuel ?
             </h1>
-            <p className="text-marine/70 mb-6">
-              Pour l’ensemble des frais (école, logement, vie sur place).
+            <p className="text-marine/80 mb-6">
+              Pour l&apos;ensemble des frais (école, logement, vie sur place).
             </p>
             <select
               name="budget"
@@ -166,7 +225,7 @@ export default function EvaluationPage() {
             <h1 className="text-3xl font-serif text-marine mb-2">
               Vos coordonnées
             </h1>
-            <p className="text-marine/70 mb-6">
+            <p className="text-marine/80 mb-6">
               Pour recevoir votre évaluation et être recontacté.
             </p>
             <div className="space-y-4">
@@ -201,8 +260,8 @@ export default function EvaluationPage() {
             <div className="flex items-start gap-3 mt-4">
               <input type="checkbox" required className="mt-1 accent-accent" />
               <p className="text-sm text-marine/60 leading-tight">
-                J’accepte que Premium Consulting utilise ces informations pour
-                me contacter dans le cadre de mon projet d’études.
+                J&apos;accepte que Premium Consulting utilise ces informations
+                pour me contacter dans le cadre de mon projet d&apos;études.
               </p>
             </div>
           </div>
@@ -214,7 +273,7 @@ export default function EvaluationPage() {
             <button
               type="button"
               onClick={prevStep}
-              className="text-marine/60 hover:text-marine font-medium px-4 py-2"
+              className="text-marine/60 hover:text-marine font-medium px-4 py-2 transition-colors"
             >
               ← Retour
             </button>
@@ -226,16 +285,17 @@ export default function EvaluationPage() {
             <button
               type="button"
               onClick={nextStep}
-              className="bg-accent text-white px-8 py-3 rounded-lg font-medium hover:opacity-90 transition-all"
+              className="bg-accent text-white px-8 py-3 rounded-lg font-medium hover:bg-[#b03d27] active:scale-[0.98] transition-all"
             >
               Continuer
             </button>
           ) : (
             <button
               type="submit"
-              className="bg-marine text-fond px-8 py-3 rounded-lg font-medium hover:opacity-90 transition-all"
+              disabled={isSubmitting}
+              className="bg-marine text-fond px-8 py-3 rounded-lg font-medium hover:opacity-90 active:scale-[0.98] transition-all disabled:opacity-70"
             >
-              Envoyer mon dossier
+              {isSubmitting ? "Envoi en cours..." : "Envoyer mon dossier"}
             </button>
           )}
         </div>
