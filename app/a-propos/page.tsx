@@ -8,19 +8,19 @@ export default function AProposPage() {
       nom: "Soumahoro Memon",
       role: "Fondateur & Directeur",
       bio: "Expert en orientation internationale, il accompagne les étudiants ivoiriens depuis 2016.",
-      image: "/images/equipe/directeur.jpg",
+      image: "/images/equipe/dg.jpg",
     },
     {
       nom: "Nom du Conseiller",
       role: "Conseiller Pédagogique",
       bio: "Spécialiste des procédures Campus France et Parcoursup, il optimise chaque dossier.",
-      image: "/images/equipe/conseiller.jpg",
+      image: "/images/equipe/cp.jpg",
     },
     {
       nom: "Nom de la Conseillère",
       role: "Responsable Logement & Installation",
       bio: "Basée à Paris, elle accueille les étudiants et les aide à s’installer sereinement.",
-      image: "/images/equipe/conseillere.jpg",
+      image: "/images/equipe/cc.jpg",
     },
   ];
 
