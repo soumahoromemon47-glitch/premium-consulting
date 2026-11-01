@@ -70,20 +70,26 @@ export default function CommentCaMarchePage() {
         </div>
 
         {/* Colonne de droite : La frise chronologique */}
+        {/* Colonne de droite : La frise chronologique */}
         <div className="lg:col-span-7">
           <div className="relative border-l border-ligne ml-4 md:ml-8 space-y-16 pb-12">
             {etapes.map((etape, index) => (
-              // On applique un délai progressif pour chaque étape (0ms, 150ms, 300ms...)
-              <FadeIn key={etape.numero} delay={index * 150}>
-                <div className="relative pl-10 md:pl-16 group">
-                  {/* Le grand numéro en serif (le point sur la ligne) */}
-                  <div className="absolute -left-2.1rem md:-left-3.1rem top-0 bg-fond py-2 transition-transform duration-500 group-hover:scale-110 group-hover:text-accent">
+              // 1. On ajoute className="relative" ici
+              <FadeIn
+                key={etape.numero}
+                delay={index * 150}
+                className="relative"
+              >
+                {/* 2. On ajuste le padding-left (pl-14 et md:pl-20) pour laisser de la place au numéro */}
+                <div className="relative pl-14 md:pl-20 group pb-4">
+                  {/* 3. On ajuste la position du numéro (-left-7 et md:-left-9) */}
+                  <div className="absolute -left-7 md:-left-9 top-0 bg-fond py-1 transition-transform duration-500 group-hover:scale-110 group-hover:text-accent">
                     <span className="text-4xl md:text-5xl font-serif text-marine font-semibold tracking-tighter block leading-none">
                       {etape.numero}
                     </span>
                   </div>
 
-                  {/* Contenu de l’étape */}
+                  {/* Contenu de l'étape */}
                   <div className="pt-1">
                     <h2 className="text-2xl md:text-3xl font-serif text-marine mb-4 group-hover:text-accent transition-colors duration-300">
                       {etape.titre}

@@ -10,7 +10,7 @@ const temoignages = [
     annee: "Admise en 2024",
     citation:
       "Je ne savais pas par où commencer. L’équipe de Premium Consulting a structuré mon dossier, m’a préparée à l’entretien Campus France et aujourd’hui je suis à Paris. Leur suivi est exceptionnel.",
-    image: "/images/temoignages/aminata.jpg",
+    image: "/images/temoignages/tm4.jpg",
   },
   {
     id: 2,
@@ -19,7 +19,7 @@ const temoignages = [
     annee: "Admis en 2023",
     citation:
       "Le plus dur pour moi, c’était le visa. J’avais peur du refus. Grâce à leurs conseils sur le dossier financier et la simulation d’entretien, tout s’est très bien passé. Je recommande vivement.",
-    image: "/images/temoignages/yao.jpg",
+    image: "/images/temoignages/tm3.jpg",
   },
   {
     id: 3,
@@ -28,7 +28,7 @@ const temoignages = [
     annee: "Maman de Fatou, admise en 2024",
     citation:
       "En tant que parent, je voulais être sûre que ma fille serait bien encadrée. Le cabinet a été transparent sur les tarifs et très rassurant sur la sécurité à Paris. L’accueil à l’aéroport a été la cerise sur le gâteau.",
-    image: "/images/temoignages/fatou.jpg",
+    image: "/images/temoignages/tm2.jpg",
   },
 ];
 
