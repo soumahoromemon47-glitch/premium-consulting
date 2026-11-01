@@ -49,7 +49,7 @@ export default function Home() {
             <div className="relative">
               <div className="aspect-4/5 bg-secondaire border border-ligne relative overflow-hidden">
                 <Image
-                  src="public/images/hero/etud.jpg"
+                  src="/images/hero/etud.jpg"
                   alt="Étudiants sur le campus"
                   fill
                   className="object-cover w-full h-full hover:scale-105 transition-transform duration-700"
