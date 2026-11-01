@@ -23,10 +23,10 @@ export default function EvaluationPage() {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  /*const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     alert("Formulaire envoyé ! Merci " + formData.nom);
-  };
+  };*/
 
   return (
     <div className="max-w-2xl mx-auto px-4 py-16">
@@ -44,7 +44,12 @@ export default function EvaluationPage() {
         </div>
       </div>
 
-      <form onSubmit={handleSubmit} className="space-y-8">
+      <form
+        action="https://formspree.io/f/xbggawdl"
+        method="POST"
+        // onSubmit={handleSubmit}
+        className="space-y-8"
+      >
         {/* ÉTAPE 1 */}
         {step === 1 && (
           <div className="space-y-6">
