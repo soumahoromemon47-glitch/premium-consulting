@@ -1,16 +1,53 @@
 "use client";
 
+import Image from "next/image";
 import { useState } from "react";
 import Link from "next/link";
 import FadeIn from "@/components/FadeIn";
 
 const ecolesData = [
-  { id: 1, nom: "ESCP Business School", domaine: "Commerce", ville: "Paris" },
-  { id: 2, nom: "EM Lyon", domaine: "Commerce", ville: "Lyon" },
-  { id: 3, nom: "EPITA", domaine: "Informatique", ville: "Paris" },
-  { id: 4, nom: "42", domaine: "Informatique", ville: "Paris" },
-  { id: 5, nom: "CELSA", domaine: "Communication", ville: "Paris" },
-  { id: 6, nom: "Sciences Po", domaine: "Sciences Politiques", ville: "Paris" },
+  {
+    id: 1,
+    nom: "ESCP Business School",
+    domaine: "Commerce",
+    ville: "Paris",
+    logo: "/images/ecoles/escp.png",
+  },
+  {
+    id: 2,
+    nom: "EM Lyon",
+    domaine: "Commerce",
+    ville: "Lyon",
+    logo: "/images/ecoles/em-lyon.png",
+  },
+  {
+    id: 3,
+    nom: "EPITA",
+    domaine: "Informatique",
+    ville: "Paris",
+    logo: "/images/ecoles/epita.png",
+  },
+  {
+    id: 4,
+    nom: "42",
+    domaine: "Informatique",
+    ville: "Paris",
+    logo: "/images/ecoles/42.png",
+  },
+  {
+    id: 5,
+    nom: "CELSA",
+    domaine: "Communication",
+    ville: "Paris",
+    logo: "/images/ecoles/celsa.png",
+  },
+  {
+    id: 6,
+    nom: "Sciences Po",
+    domaine: "Sciences Politiques",
+    ville: "Paris",
+    logo: "/images/ecoles/sciences-po.png",
+  },
 ];
 
 const domaines = [
@@ -68,8 +105,13 @@ export default function EcolesPage() {
           <FadeIn key={ecole.id} delay={index * 100}>
             <div className="group border border-ligne bg-white p-8 flex flex-col justify-between hover:border-marine/40 hover:-translate-y-1 transition-all duration-300 h-full">
               <div>
-                <div className="h-20 w-full mb-8 flex items-center justify-center grayscale opacity-40 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500">
-                  <span className="font-serif text-2xl text-marine">Logo</span>
+                <div className="h-24 w-full mb-8 flex items-center justify-center relative grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500">
+                  <Image
+                    src={ecole.logo}
+                    alt={`Logo ${ecole.nom}`}
+                    fill
+                    className="object-contain p-2"
+                  />
                 </div>
                 <h2 className="text-2xl font-serif text-marine mb-2">
                   {ecole.nom}
