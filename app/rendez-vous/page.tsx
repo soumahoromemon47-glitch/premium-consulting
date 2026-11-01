@@ -3,7 +3,7 @@ import CalEmbed from "@/components/CalEmbed";
 
 export default function RendezVousPage() {
   // ⚠️ REMPLACE ICI par le lien de ton événement Cal.com (ex: "memon/consultation")
-  const monLienCal = "premium-consulting/consultation";
+  const monLienCal = "memon-soumahoro-3yek7y/premium-consulting";
 
   return (
     <div className="max-w-6xl mx-auto px-4 py-16 md:py-24">
