@@ -1,5 +1,6 @@
 ﻿"use client";
 
+import Image from "next/image";
 import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation"; // <-- Import de usePathname
@@ -24,10 +25,16 @@ export default function Navbar() {
       <div className="max-w-6xl mx-auto px-4 h-20 flex items-center justify-between">
         <Link
           href="/"
-          className="font-serif text-2xl font-semibold text-marine"
+          className="relative block w-48 h-12 md:w-56 md:h-14"
           onClick={() => setIsOpen(false)}
         >
-          Premium Consulting
+          <Image
+            src="/images/logo.jpeg"
+            alt="Premium Consulting"
+            fill
+            className="object-contain object-left mix-blend-multiply"
+            priority
+          />
         </Link>
 
         {/* Navigation Desktop */}

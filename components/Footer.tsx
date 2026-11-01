@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 export default function Footer() {
@@ -8,7 +9,16 @@ export default function Footer() {
       <div className="max-w-6xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8">
         <div>
           {/* text-2xl -> text-xl, mb-4 -> mb-3 */}
-          <h3 className="font-serif text-xl mb-3">Premium Consulting</h3>
+          <div className="bg-white p-3 rounded-md inline-block mb-4">
+            <div className="relative w-40 h-12">
+              <Image
+                src="/images/logo.jpeg"
+                alt="Premium Consulting"
+                fill
+                className="object-contain"
+              />
+            </div>
+          </div>
           <p className="text-sm text-gray-300 leading-relaxed">
             Votre cabinet d’orientation à Abidjan. Nous vous accompagnons de
             l’admission jusqu’à votre installation à Paris.
@@ -34,7 +44,7 @@ export default function Footer() {
             </li>
             <li>
               <a
-                href="https://wa.me/VOTRE_NUMERO"
+                href="https://wa.me/+2250576693374"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:text-accent transition-colors"
