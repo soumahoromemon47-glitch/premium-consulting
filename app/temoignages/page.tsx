@@ -30,6 +30,15 @@ const temoignages = [
       "En tant que parent, je voulais être sûre que ma fille serait bien encadrée. Le cabinet a été transparent sur les tarifs et très rassurant sur la sécurité à Paris. L’accueil à l’aéroport a été la cerise sur le gâteau.",
     image: "/images/temoignages/tm2.jpg",
   },
+  {
+    id: 4,
+    nom: "Bini Deki.",
+    ecole: "Université monaco 1",
+    annee: "Bini Deki, admis en 2020",
+    citation:
+      "Agence très professionnelle et à l’écoute. Tout était bien préparé : billets, hébergement, transferts. Le suivi a été réactif pendant tout le séjour et le rapport qualité-prix est excellent. Je recommande à 100 % !",
+    image: "/images/temoignages/tm1.jpg",
+  },
 ];
 
 export default function TemoignagesPage() {
