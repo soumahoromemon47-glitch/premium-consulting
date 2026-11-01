@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import FadeIn from "@/components/FadeIn";
@@ -80,6 +81,24 @@ const servicesData: Record<string, Service> = {
     ],
   },
 };
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
+  const { slug } = await params;
+  const service = servicesData[slug];
+
+  if (!service) {
+    return { title: "Service introuvable" };
+  }
+
+  return {
+    title: service.titre,
+    description: service.soustitre,
+  };
+}
 
 export async function generateStaticParams() {
   return Object.keys(servicesData).map((slug) => ({

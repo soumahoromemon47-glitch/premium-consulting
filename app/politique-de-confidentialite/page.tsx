@@ -1,3 +1,13 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Politique de Confidentialité",
+  description:
+    "Comment nous protégeons et utilisons vos données personnelles chez Premium Consulting.",
+};
+
+// ... le reste de tes imports
+
 import FadeIn from "@/components/FadeIn";
 
 export default function PolitiqueConfidentialitePage() {

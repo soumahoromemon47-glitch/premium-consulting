@@ -1,4 +1,13 @@
-﻿import Link from "next/link";
+﻿import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Comment ça marche",
+  description:
+    "Découvrez notre méthode en 5 étapes pour intégrer une école en France depuis Abidjan : analyse du dossier, choix des écoles, visa et installation.",
+};
+
+// ... le reste de tes imports et de ton code
+import Link from "next/link";
 import FadeIn from "@/components/FadeIn";
 
 export default function CommentCaMarchePage() {

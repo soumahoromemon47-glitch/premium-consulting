@@ -1,4 +1,14 @@
-﻿import Image from "next/image";
+﻿import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Témoignages d'étudiants",
+  description:
+    "Découvrez les parcours de nos étudiants ivoiriens admis dans les meilleures écoles françaises (ESCP, EPITA, Paris 1...).",
+};
+
+// ... le reste de tes imports
+
+import Image from "next/image";
 import Link from "next/link";
 import FadeIn from "@/components/FadeIn";
 

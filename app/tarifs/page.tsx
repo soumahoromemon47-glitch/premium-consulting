@@ -1,4 +1,14 @@
-﻿import Link from "next/link";
+﻿import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Nos tarifs et formules",
+  description:
+    "Des tarifs clairs et transparents pour votre accompagnement. Découvrez nos 3 packs (Essentiel, Sérénité, Premium) et ce qui est inclus.",
+};
+
+// ... le reste de tes imports
+
+import Link from "next/link";
 import FadeIn from "@/components/FadeIn";
 
 export default function TarifsPage() {
