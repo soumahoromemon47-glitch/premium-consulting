@@ -105,7 +105,7 @@ export default function EcolesPage() {
           <FadeIn key={ecole.id} delay={index * 100}>
             <div className="group border border-ligne bg-white p-8 flex flex-col justify-between hover:border-marine/40 hover:-translate-y-1 transition-all duration-300 h-full">
               <div>
-                <div className="h-24 w-full mb-8 flex items-center justify-center relative grayscale opacity-60 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-500">
+                <div className="h-24 w-full mb-8 flex items-center justify-center relative transition-all duration-500 md:grayscale md:opacity-60 md:group-hover:grayscale-0 md:group-hover:opacity-100">
                   <Image
                     src={ecole.logo}
                     alt={`Logo ${ecole.nom}`}

@@ -95,12 +95,12 @@ export default function AProposPage() {
             <FadeIn key={index} delay={index * 150}>
               <div className="group">
                 <div className="aspect-4/5 bg-secondaire border border-ligne mb-6 grayscale group-hover:grayscale-0 transition-all duration-700 overflow-hidden relative">
-                  <div className="aspect-4/5 bg-secondaire border border-ligne mb-6 grayscale group-hover:grayscale-0 transition-all duration-700 overflow-hidden relative">
+                  <div className="aspect-4/5 bg-secondaire border border-ligne mb-6 overflow-hidden relative transition-all duration-700 md:grayscale md:group-hover:grayscale-0">
                     <Image
                       src={membre.image}
                       alt={`Portrait de ${membre.nom}`}
                       fill
-                      className="object-cover"
+                      className="object-cover w-full h-full transition-transform duration-700 md:group-hover:scale-105"
                     />
                   </div>
                 </div>

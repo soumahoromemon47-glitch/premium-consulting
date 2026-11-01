@@ -73,7 +73,7 @@ export default function TemoignagesPage() {
                       src={item.image}
                       alt={`Portrait de ${item.nom}`}
                       fill
-                      className="object-cover w-full h-full grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700"
+                      className="object-cover w-full h-full transition-all duration-700 md:grayscale md:group-hover:grayscale-0 md:group-hover:scale-105"
                     />
                   </div>
                 </div>
