@@ -63,7 +63,7 @@ export default function Home() {
       </section>
 
       {/* 2. LES 3 PILIERS */}
-      <section className="border-y border-ligne background-color: #FAF8F4">
+      <section className="border-y border-ligne bg-fond: #FAF8F4">
         <FadeIn>
           <div className="max-w-6xl mx-auto px-4 py-20 grid grid-cols-1 md:grid-cols-3 gap-0">
             <div className="border-b md:border-b-0 md:border-r border-ligne pb-10 md:pb-0 md:pr-10 pt-6 md:pt-0 hover:bg-white/50 transition-colors duration-300">
