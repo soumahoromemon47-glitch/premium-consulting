@@ -28,8 +28,9 @@ export default function Footer() {
           <h4 className="font-serif text-lg mb-3">Contact</h4>
           <p className="text-sm text-gray-300">Abidjan, Côte d’Ivoire</p>
           <p className="text-sm text-gray-300 mt-2">
-            Lundi - Vendredi : 8h - 17h samedi : 8h - 12h
+            Lundi - Vendredi : 8h - 17h
           </p>
+          <p className="text-sm text-gray-300 mt-2">samedi : 8h - 12h</p>
         </div>
         <div>
           <h4 className="font-serif text-lg mb-3">Actions</h4>
