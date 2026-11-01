@@ -29,7 +29,7 @@ export default function Navbar() {
           onClick={() => setIsOpen(false)}
         >
           <Image
-            src="/images/logo.jpeg"
+            src="/images/logo.jpg"
             alt="Premium Consulting"
             fill
             className="object-contain object-left mix-blend-multiply"

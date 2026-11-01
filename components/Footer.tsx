@@ -12,7 +12,7 @@ export default function Footer() {
           <div className="bg-white p-3 rounded-md inline-block mb-4">
             <div className="relative w-40 h-12">
               <Image
-                src="/images/logo.jpeg"
+                src="/images/logo.jpg"
                 alt="Premium Consulting"
                 fill
                 className="object-contain"
