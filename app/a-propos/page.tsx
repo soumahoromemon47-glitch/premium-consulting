@@ -3,7 +3,7 @@
 export const metadata: Metadata = {
   title: "À propos de Premium Consulting",
   description:
-    "Depuis 2016, Premium Consulting accompagne les étudiants d'Abidjan vers les meilleures écoles françaises. Découvrez notre équipe et nos valeurs.",
+    "Depuis 2016, Premium Consulting accompagne les étudiants d’Abidjan vers les meilleures écoles françaises. Découvrez notre équipe et nos valeurs.",
 };
 
 // ... le reste de tes imports
@@ -36,22 +36,36 @@ export default function AProposPage() {
 
   return (
     <div className="w-full">
-      <section className="max-w-4xl mx-auto px-4 pt-20 pb-16 md:pt-32 md:pb-24 text-center">
-        <FadeIn>
-          <span className="text-accent text-sm font-medium uppercase tracking-widest block mb-4">
-            Depuis 2016
-          </span>
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif text-marine mb-8 leading-tight">
-            Nous ouvrons les portes des meilleures écoles françaises aux
-            étudiants ivoiriens.
-          </h1>
-          <p className="text-lg md:text-xl text-marine/70 leading-relaxed max-w-3xl mx-auto">
-            Premium Consulting est né d’un constat simple : le passage d’Abidjan
-            à Paris est un parcours semé d’embûches administratives. Depuis
-            2016, notre mission est de transformer cette complexité en une
-            procédure claire, humaine et sécurisée pour vous et vos parents.
-          </p>
-        </FadeIn>
+      <section className="max-w-6xl mx-auto px-4 pt-20 pb-16 md:pt-32 md:pb-24">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+          <FadeIn>
+            <span className="text-accent text-sm font-medium uppercase tracking-widest block mb-4">
+              Depuis 2016
+            </span>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif text-marine mb-8 leading-tight">
+              Nous ouvrons les portes des meilleures écoles françaises.
+            </h1>
+            <p className="text-lg md:text-xl text-marine/80 leading-relaxed mb-6">
+              Premium Consulting est né d’un constat simple : le passage
+              d’Abidjan à Paris est un parcours semé d’embûches administratives.
+            </p>
+            <p className="text-lg md:text-xl text-marine/80 leading-relaxed">
+              Depuis 2016, notre mission est de transformer cette complexité en
+              une procédure claire, humaine et sécurisée pour vous et vos
+              parents.
+            </p>
+          </FadeIn>
+          <FadeIn delay={200}>
+            <div className="relative aspect-4/5 bg-secondaire border border-ligne rounded-lg overflow-hidden">
+              <Image
+                src="/images/pages/a-propos-hero.jpg" // <-- Ton image ici
+                alt="L’équipe Premium Consulting"
+                fill
+                className="object-cover"
+              />
+            </div>
+          </FadeIn>
+        </div>
       </section>
 
       <section className="border-y border-ligne bg-fond">
@@ -104,7 +118,7 @@ export default function AProposPage() {
           {equipe.map((membre, index) => (
             <FadeIn key={index} delay={index * 150}>
               <div className="group">
-                {/* C'est la classe "md:grayscale" qui limite le noir et blanc aux ordinateurs */}
+                {/* C’est la classe "md:grayscale" qui limite le noir et blanc aux ordinateurs */}
                 <div className="aspect-4/5 bg-secondaire border border-ligne mb-6 overflow-hidden relative transition-all duration-700 md:grayscale md:group-hover:grayscale-0">
                   <Image
                     src={membre.image}

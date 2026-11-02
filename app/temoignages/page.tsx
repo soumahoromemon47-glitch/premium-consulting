@@ -70,6 +70,19 @@ export default function TemoignagesPage() {
         </FadeIn>
       </section>
 
+      <section className="max-w-6xl mx-auto px-4 pb-16">
+        <FadeIn delay={100}>
+          <div className="relative w-full h-[40vh] md:h-[60vh] bg-secondaire border border-ligne rounded-lg overflow-hidden">
+            <Image
+              src="/images/pages/temoignages-hero.jpg" // <-- Ton image ici
+              alt="Étudiants sur le campus"
+              fill
+              className="object-cover object-center"
+            />
+          </div>
+        </FadeIn>
+      </section>
+
       <section className="max-w-6xl mx-auto px-4 pb-24">
         <div className="space-y-24 md:space-y-32">
           {temoignages.map((item, index) => (

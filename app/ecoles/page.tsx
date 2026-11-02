@@ -68,17 +68,28 @@ export default function EcolesPage() {
   return (
     <div className="max-w-6xl mx-auto px-4 py-16 md:py-24">
       <FadeIn>
-        <div className="max-w-3xl mb-16">
-          <span className="text-accent text-sm font-medium uppercase tracking-widest block mb-4">
-            Notre réseau
-          </span>
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif text-marine mb-6 leading-tight">
-            Les meilleures écoles françaises, à votre portée.
-          </h1>
-          <p className="text-lg text-marine/70 leading-relaxed">
-            Nous avons sélectionné plus de 30 établissements partenaires.
-            Découvrez ceux qui correspondent à votre profil et à vos ambitions.
-          </p>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16 md:mb-24">
+          <div className="max-w-3xl">
+            <span className="text-accent text-sm font-medium uppercase tracking-widest block mb-4">
+              Notre réseau
+            </span>
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-serif text-marine mb-6 leading-tight">
+              Les meilleures écoles françaises, à votre portée.
+            </h1>
+            <p className="text-lg md:text-xl text-marine/80 leading-relaxed">
+              Nous avons sélectionné plus de 30 établissements partenaires.
+              Découvrez ceux qui correspondent à votre profil et à vos
+              ambitions.
+            </p>
+          </div>
+          <div className="relative aspect-4/3 lg:aspect-square bg-secondaire border border-ligne rounded-lg overflow-hidden">
+            <Image
+              src="/images/pages/ecoles-hero.jpg" // <-- Ton image ici
+              alt="Campus universitaire en France"
+              fill
+              className="object-cover"
+            />
+          </div>
         </div>
       </FadeIn>
 

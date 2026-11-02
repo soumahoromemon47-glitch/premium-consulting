@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useState } from "react";
 import FadeIn from "@/components/FadeIn";
 
@@ -209,6 +210,18 @@ export default function ContactPage() {
                   →
                 </span>
               </a>
+            </div>
+          </FadeIn>
+
+          {/* Photo de l'agence */}
+          <FadeIn delay={250}>
+            <div className="relative aspect-4/3 bg-secondaire border border-ligne rounded-lg overflow-hidden">
+              <Image
+                src="/images/pages/contact-agence.jpg" // <-- Ton image ici
+                alt="L'agence Premium Consulting à Abidjan"
+                fill
+                className="object-cover"
+              />
             </div>
           </FadeIn>
 

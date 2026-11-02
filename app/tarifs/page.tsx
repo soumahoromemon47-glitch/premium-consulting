@@ -1,4 +1,5 @@
-﻿import type { Metadata } from "next";
+﻿import Image from "next/image";
+import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Nos tarifs et formules",
@@ -15,18 +16,28 @@ export default function TarifsPage() {
   return (
     <div className="max-w-6xl mx-auto px-4 py-16 md:py-24">
       <FadeIn>
-        <div className="max-w-3xl mb-16">
-          <span className="text-accent text-sm font-medium uppercase tracking-widest block mb-4">
-            Nos formules
-          </span>
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-serif text-marine mb-6 leading-tight">
-            Des tarifs clairs, <br className="hidden md:block" /> sans surprise.
-          </h1>
-          <p className="text-lg text-marine/70 leading-relaxed">
-            Nous croyons que la transparence est la base de la confiance. Voici
-            nos formules d’accompagnement. Les frais institutionnels (école,
-            visa, etc.) restent à votre charge et sont détaillés ci-dessous.
-          </p>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-16 md:mb-24">
+          <div>
+            <span className="text-accent text-sm font-medium uppercase tracking-widest block mb-4">
+              Nos formules
+            </span>
+            <h1 className="text-5xl md:text-6xl lg:text-7xl font-serif text-marine mb-6 leading-tight">
+              Des tarifs clairs, sans surprise.
+            </h1>
+            <p className="text-lg md:text-xl text-marine/80 leading-relaxed">
+              Nous croyons que la transparence est la base de la confiance. Les
+              frais institutionnels restent à votre charge et sont détaillés
+              ci-dessous.
+            </p>
+          </div>
+          <div className="relative aspect-4/3 bg-secondaire border border-ligne rounded-lg overflow-hidden">
+            <Image
+              src="/images/pages/tarifs-hero.jpg" // <-- Ton image ici
+              alt="Transparence des tarifs"
+              fill
+              className="object-cover"
+            />
+          </div>
         </div>
       </FadeIn>
 
