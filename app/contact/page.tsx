@@ -1,5 +1,6 @@
 "use client";
 
+import CTASection from "@/components/CTASection";
 import Image from "next/image";
 import { useState } from "react";
 import FadeIn from "@/components/FadeIn";
@@ -358,6 +359,7 @@ export default function ContactPage() {
           </FadeIn>
         </div>
       </div>
+      <CTASection />
     </div>
   );
 }

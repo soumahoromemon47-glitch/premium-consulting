@@ -1,3 +1,4 @@
+import CTASection from "@/components/CTASection";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -238,6 +239,7 @@ export default async function ServicePage({
           </FadeIn>
         </div>
       </div>
+      <CTASection />
     </div>
   );
 }

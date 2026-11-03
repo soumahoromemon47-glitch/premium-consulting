@@ -1,4 +1,5 @@
-﻿import Image from "next/image";
+﻿import CTASection from "@/components/CTASection";
+import Image from "next/image";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -232,6 +233,7 @@ export default function TarifsPage() {
           </div>
         </div>
       </FadeIn>
+      <CTASection />
     </div>
   );
 }

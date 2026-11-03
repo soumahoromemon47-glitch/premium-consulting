@@ -1,4 +1,5 @@
-﻿import type { Metadata } from "next";
+﻿import CTASection from "@/components/CTASection";
+import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Comment ça marche",
@@ -141,6 +142,7 @@ export default function CommentCaMarchePage() {
           </Link>
         </div>
       </FadeIn>
+      <CTASection />
     </div>
   );
 }

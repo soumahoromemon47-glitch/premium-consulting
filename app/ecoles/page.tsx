@@ -1,5 +1,6 @@
 "use client";
 
+import CTASection from "@/components/CTASection";
 import Image from "next/image";
 import { useState } from "react";
 import Link from "next/link";
@@ -171,6 +172,7 @@ export default function EcolesPage() {
           </Link>
         </div>
       </FadeIn>
+      <CTASection />
     </div>
   );
 }

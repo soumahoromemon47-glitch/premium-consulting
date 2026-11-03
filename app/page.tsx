@@ -1,4 +1,5 @@
-﻿import Image from "next/image";
+﻿import HeroCarousel from "@/components/HeroCarousel";
+//import Image from "next/image";
 import Link from "next/link";
 import FadeIn from "@/components/FadeIn";
 
@@ -47,18 +48,12 @@ export default function Home() {
           {/* Image avec un léger délai d’apparition */}
           <FadeIn delay={200}>
             <div className="relative">
-              <div className="aspect-4/5 bg-secondaire border border-ligne relative overflow-hidden">
-                <Image
-                  src="/images/hero/etud.jpg"
-                  alt="Étudiants sur le campus"
-                  fill
-                  className="object-cover w-full h-full hover:scale-105 transition-transform duration-700"
-                />
-              </div>
+              {/* On utilise le composant Carousel ici */}
+              <HeroCarousel />
               <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-accent/10 -z-10"></div>
             </div>
           </FadeIn>
-          <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-accent/5 rounded-full blur-[100px] -z-10 pointer-events-none"></div>
+          <div className="absolute top-0 right-0 w-500px h-500px bg-accent/5 rounded-full blur-[100px] -z-10 pointer-events-none"></div>
         </div>
       </section>
 
@@ -102,6 +97,62 @@ export default function Home() {
             </div>
           </div>
         </FadeIn>
+      </section>
+
+      {/* SECTION "POURQUOI NOUS CHOISIR" */}
+      <section className="max-w-6xl mx-auto px-4 py-24">
+        <FadeIn>
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-serif text-marine mb-4">
+              Pourquoi nous choisir ?
+            </h2>
+            <p className="text-marine/80 max-w-2xl mx-auto">
+              Nous ne sommes pas une simple agence de voyage. Nous sommes votre
+              partenaire stratégique pour réussir votre projet d&apos;études.
+            </p>
+          </div>
+        </FadeIn>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <FadeIn delay={100}>
+            <div className="border-t-2 border-accent pt-6">
+              <h3 className="text-xl font-serif text-marine mb-3">
+                Expertise locale et internationale
+              </h3>
+              <p className="text-marine/70 text-sm leading-relaxed">
+                Basés à Abidjan et connectés à Paris, nous connaissons
+                parfaitement les réalités des deux systèmes éducatifs et les
+                attentes des consulats.
+              </p>
+            </div>
+          </FadeIn>
+
+          <FadeIn delay={200}>
+            <div className="border-t-2 border-accent pt-6">
+              <h3 className="text-xl font-serif text-marine mb-3">
+                Accompagnement personnalisé
+              </h3>
+              <p className="text-marine/70 text-sm leading-relaxed">
+                Chaque dossier est unique. Nous prenons le temps d&apos;analyser
+                votre profil pour vous proposer la stratégie la plus adaptée,
+                sans faire de promesses irréalistes.
+              </p>
+            </div>
+          </FadeIn>
+
+          <FadeIn delay={300}>
+            <div className="border-t-2 border-accent pt-6">
+              <h3 className="text-xl font-serif text-marine mb-3">
+                Transparence totale
+              </h3>
+              <p className="text-marine/70 text-sm leading-relaxed">
+                Pas de frais cachés. Nous vous expliquons clairement ce qui est
+                inclus dans nos honoraires et ce qui reste à votre charge (frais
+                d&apos;école, visa, etc.).
+              </p>
+            </div>
+          </FadeIn>
+        </div>
       </section>
 
       {/* 3. LES CHIFFRES CLÉS */}
